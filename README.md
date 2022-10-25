@@ -4,7 +4,7 @@ Sociorama is a blog/social sharing site where you can post to a forum and other 
 
 > Angular Typescript PWA responsive progressive-web-app bootstrap material
 
-The frontend is built with Angular and is fully responsive. Data is stored and retrieved from a backend application (via REST endpoints) using Angular HttpClient. Here is a [demo of the app](), and the [backend]().
+The frontend is built with Angular and is fully responsive. Data is stored and retrieved from a backend application (via REST endpoints) using Angular HttpClient. Here is a [demo of the app](), and its [backend](https://github.com/badass-techie/Sociorama-API).
 
 ---
 
@@ -51,6 +51,6 @@ The frontend is built with Angular and is fully responsive. Data is stored and r
 ## Improving the User Experience
 
 - [ ] Lazy load content in feeds (posts, comments, etc) and only load more items when the user scrolls to the bottom of the page.
-- [ ] Implement a caching mechanism to reduce the number of requests to the backend.
+- [ ] Use a caching mechanism to improve loading speeds.
 
 ---
