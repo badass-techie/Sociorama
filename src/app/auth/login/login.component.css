@@ -1,0 +1,51 @@
+.login-section{
+    margin-top: 100px;
+}
+
+.card{
+    background-color: var(--primary);
+    color: var(--textPrimary);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.login {
+    width: 50%;
+    background-color: var(--textPrimary);
+    border-color: var(--textPrimary);
+    color: var(--primary);
+    border: 1px solid;
+    border-radius: 13px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    opacity: 1;
+    margin-bottom: 16px;
+}
+
+.login:hover{
+    opacity: 0.6;
+}
+
+.login:disabled{
+    background-color: var(--disabled);
+  }
+
+.form-group{
+    margin: 16px;
+}
+
+.signup{
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signup:hover{
+    opacity: 0.6;
+}

@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <div class="col-1 col-lg-3"></div>
+        <div class="create-post-container col-10 col-lg-6">
+            <form class="post-form" [formGroup]="createPostForm" (ngSubmit)="createPost()">
+                <div class="form-group">
+                    <div class="create-post-heading">Create post</div>
+                    <br />
+
+                    <div>
+                        <select class="form-group dropdown col-12" [formControlName]="'forumName'">
+                            <option value="" selected disabled>Select forum</option>
+                            <option *ngFor="let forum of forums">{{forum.forumName}}</option>
+                        </select>
+                        <span
+                            *ngIf="!createPostForm.get('forumName')?.valid && createPostForm.get('forumName')?.touched"
+                            class="help-block">Please choose a forum to post to</span>
+                    </div>
+
+                    <div>
+                        <label class="text-with-inline-placeholder form-group col-12">
+                            <input type="text" placeholder=" " [formControlName]="'postName'"
+                                class="form-control text-edit">
+                            <span class="text-hint">Title</span>
+                        </label>
+                        <span *ngIf="!createPostForm.get('postName')?.valid && createPostForm.get('postName')?.touched"
+                            class="help-block">Title cannot be empty</span>
+                    </div>
+
+                    <div>
+                        <label class="text-with-inline-placeholder form-group col-12">
+                            <textarea type="text" placeholder=" " [formControlName]="'text'"
+                                class="form-control text-edit" rows="12"></textarea>
+                            <span class="text-hint">Text</span>
+                        </label>
+                        <span *ngIf="!createPostForm.get('text')?.valid && createPostForm.get('text')?.touched"
+                            class="help-block">Text cannot be empty</span>
+                    </div>
+
+                    <div style="text-align:left">
+                        <span>
+                            <b>Image:</b> <img [src]="image" class="img" *ngIf="image"><input type="file" (change)="selectImage($event)">
+                        </span>
+                        <br/>
+                        <span *ngIf="invalidImage" class="help-block">File is not a (supported) image</span>
+                    </div>
+
+                    <span>
+                        <div style="text-align: center" class="float-right">
+                            <button (click)="discard()" class="btnDiscard">Discard</button>
+                            <button type="submit" class="btnCreatePost" [disabled]="!createPostForm.valid">Post</button>
+                        </div>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

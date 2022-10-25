@@ -1,0 +1,55 @@
+<div class="row post" *ngFor="let post of posts$">
+    <!-- Section to Display Votes-->
+    <app-vote-button [post]="post" class="col-1 vote-column"></app-vote-button>
+    <!-- Section to Display Post Information-->
+    <div class="col-11 post-body">
+        <span class="header">
+            <span>Posted by <a class="link" routerLink="/user/{{post.userName}}">{{post.userName}}</a> · in </span>
+            <span><a class="forum-text" routerLink="/forum/{{post.forumName}}">{{post.forumName}}</a></span>
+            <span> · {{post.created}}</span>
+        </span>
+        <div class="post-title">
+            <a class="postname" href="post/{{post.postId}}">{{ wrapPostTitle(post.postName) }}</a>
+        </div>
+        <div>
+            <p class="post-text">{{ wrapPostText(post.text) }}</p>
+        </div>
+
+        <div class="img-container" *ngIf="post.image.length>0">
+            <img [ngClass] = "{img: !cropImage(), imgCropped: cropImage()}" src="{{post.image}}">
+        </div>
+
+        <form [formGroup]="editPostForm" *ngIf="showEditOverlay && post.postId == currentPostIndex" (ngSubmit)="editPost(post.postId)">
+            <div>
+                <label class="text-with-inline-placeholder form-group col-12">
+                    <textarea type="text" placeholder=" " [formControlName]="'text'"
+                              class="form-control text-edit"></textarea>
+                    <span class="text-hint">Text</span>
+                </label>
+                <span *ngIf="!editPostForm.get('text')?.valid && editPostForm.get('text')?.touched" class="help-block">Text cannot be empty</span>
+            </div>
+
+            <span>
+                <div style="text-align: center" class="float-right">
+                    <button (click)="showOrHideEditOverlay(post.postId)" class="btnDiscard">Cancel</button>
+                    <button type="submit" class="btnEditPost" [disabled]="!editPostForm.valid">Submit</button>
+                </div>
+            </span>
+        </form>
+
+        <span class="footer">
+            <a href="post/{{post.postId}}" class="btnFooter" role="button">
+                <fa-icon [icon]="commentIcon"></fa-icon>
+                {{post.commentCount}} {{post.commentCount===1?'Comment':'Comments'}}
+            </a>
+            <a (click)="showOrHideEditOverlay(post.postId)" class="btnFooter" role="button" *ngIf="isOwner(post)">
+                <fa-icon [icon]="editIcon"></fa-icon>
+                Edit
+            </a>
+            <a (click)="deletePost(post.postId)" class="btnFooter" role="button" *ngIf="isOwner(post)">
+                <fa-icon [icon]="deleteIcon"></fa-icon>
+                Delete
+            </a>
+        </span>
+    </div>
+</div>

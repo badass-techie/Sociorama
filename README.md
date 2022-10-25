@@ -1,27 +1,56 @@
-# Reddit
+# Sociorama
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.5.
+Sociorama is a blog/social sharing site where you can post to a forum and other users can share their thoughts via comments or likes.
 
-## Development server
+> Angular Typescript PWA responsive progressive-web-app bootstrap material
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The frontend is built with Angular and is fully responsive. Data is stored and retrieved from a backend application (via REST endpoints) using Angular HttpClient. Here is a [demo of the app](), and the [backend]().
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Features
 
-## Build
+- Create a user account
+- Activate your account via email
+- Login to your account
+- Change your password or delete your account
+- Create a forum, post, comment
+- Like a post
+- View all posts, posts in a forum, posts by user
+- View all forums
+- View all comments on a post, comments by user
+- Edit and delete your posts, comments, and forums
+- Logout
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## Screenshots
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Homepage
 
-## Running end-to-end tests
+![Homepage](screenshots/homepage.jpg)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### User Profile
 
-## Further help
+![User Profile](screenshots/userprofile.jpg)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Create Post
+
+![Create Post](screenshots/createpost.jpeg)
+
+### View Post
+
+![View Post](screenshots/viewpost.jpeg)
+
+### Forum Page
+
+![Forum Page](screenshots/forumpage.jpeg)
+
+---
+
+## Improving the User Experience
+
+- [ ] Lazy load content in feeds (posts, comments, etc) and only load more items when the user scrolls to the bottom of the page.
+- [ ] Implement a caching mechanism to reduce the number of requests to the backend.
+
+---

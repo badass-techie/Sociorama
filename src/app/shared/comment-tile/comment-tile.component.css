@@ -1,0 +1,83 @@
+.comment{
+    margin: 0 0% 5px 0%;
+    overflow: hidden;
+    color: var(--textSecondary);
+    position: relative;
+    border-radius: 8px;
+}
+
+.comment-body{
+    background-color: var(--primary);
+    padding: 8px 32px 8px 32px;
+}
+
+.btnEditComment,
+.btnDiscard {
+    width: 40%;
+    background-color: var(--textPrimary);
+    border-color: var(--textPrimary);
+    color: var(--primary);
+    border: 1px solid;
+    border-radius: 13px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    opacity: 1;
+    margin: 8px;
+}
+
+.btnDiscard {
+    background-color: var(--primary);
+    color: var(--textPrimary);
+}
+
+.btnEditComment:hover,
+.btnDiscard:hover {
+    opacity: 0.6;
+}
+
+.btnEditComment:disabled{
+    background-color: var(--disabled);
+}
+
+.btnFooter{
+    color: var(--textSecondary);
+    opacity: 1;
+    margin-right: 16px;
+}
+
+.btnFooter:hover{
+    opacity: 0.65;
+    cursor: pointer;
+}
+
+.header{
+    font-size: 12px;
+}
+
+.comment-text{
+    color: var(--textPrimary);
+    margin-bottom: 16px;
+}
+
+.comment-text:hover{
+    opacity: 0.6;
+}
+
+.footer{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none
+}
+
+.link{
+    color: var(--accent);
+}

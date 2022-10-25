@@ -1,0 +1,84 @@
+.container {
+    margin-top: 75px;
+}
+
+h2 {
+    font-weight: 400;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.header {
+    background-color: var(--secondary);
+    color: var(--textSecondary);
+}
+
+.contents{
+    margin: 80px 0px 8px 0px;
+}
+
+.created-by{
+    font-size: 14px;
+}
+
+.username{
+    color: var(--textPrimary);
+    font-size: 44px;
+    font-weight: 450;
+}
+
+.btnEditUser,
+.btnDiscard {
+    width: 40%;
+    background-color: var(--textPrimary);
+    border-color: var(--textPrimary);
+    color: var(--primary);
+    border: 1px solid;
+    border-radius: 13px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    opacity: 1;
+    margin: 8px;
+}
+
+.btnDiscard {
+    background-color: var(--primary);
+    color: var(--textPrimary);
+}
+
+.btnEditUser:hover,
+.btnDiscard:hover {
+    opacity: 0.6;
+}
+
+.btnEditUser:disabled{
+    background-color: var(--disabled);
+}
+
+.footer{
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--textPrimary);
+    margin-right: 16px;
+}
+
+.btnFooter{
+    color: var(--textSecondary);
+    margin-right: 16px;
+    opacity: 1;
+}
+
+.btnFooter:hover{
+    opacity: 0.65;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none
+}

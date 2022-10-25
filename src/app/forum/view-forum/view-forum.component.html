@@ -1,0 +1,51 @@
+<div>
+    <div class="row header">
+        <div class="col-1"></div>
+        <div class="col-10 contents">
+            <span class="created-by">
+                <span>Created by <a class="link" routerLink="/user/{{forum.userName}}">{{forum.userName}}</a> · {{forum.created}}</span>
+            </span>
+            <br/>
+            <span class="forum-title">{{ forum.forumName }}</span>
+            <br/>
+            <span class="forum-text">{{ forum.description }}</span>
+            <br/>
+            <form [formGroup]="editForumForm" *ngIf="showEditOverlay" (ngSubmit)="updateForumDescription(forum.forumName)">
+                <div>
+                    <label class="text-with-inline-placeholder form-group col-12">
+                        <textarea type="text" placeholder=" " [formControlName]="'text'"
+                              class="form-control text-edit"></textarea>
+                        <span class="text-hint">Text</span>
+                    </label>
+                    <span *ngIf="!editForumForm.get('text')?.valid && editForumForm.get('text')?.touched" class="help-block">Text cannot be empty</span>
+                </div>
+
+                <span>
+                    <div style="text-align: center" class="float-right">
+                        <button (click)="showOrHideEditOverlay()" class="btnDiscard">Cancel</button>
+                        <button type="submit" class="btnEditForum" [disabled]="!editForumForm.valid">Submit</button>
+                    </div>
+                </span>
+            </form>
+            <br/>
+            <span class="footer">
+                <span class="footer">{{forum.numberOfPosts}} Posts</span>
+                <a (click)="showOrHideEditOverlay()" class="btnFooter" role="button" *ngIf="isOwner(forum)">
+                        <fa-icon [icon]="editIcon"></fa-icon>
+                        Edit
+                </a>
+                <a (click)="deleteForum(forum.forumName)" class="btnFooter" role="button" *ngIf="isOwner(forum)">
+                    <fa-icon [icon]="deleteIcon"></fa-icon>
+                    Delete
+                </a>
+            </span>
+        </div>
+        <div class="col-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-0 col-md-1 col-lg-1"></div>
+        <div class="col-12 col-md-10 col-lg-10">
+            <app-post-tile [filter]="postFilter" [forumName]="forum.forumName"></app-post-tile>
+        </div>
+    </div>
+</div>

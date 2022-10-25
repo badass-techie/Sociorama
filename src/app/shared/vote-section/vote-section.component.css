@@ -1,0 +1,19 @@
+.votebox {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    font-size: 1em;
+}
+.upvote,.downvote {
+    cursor: pointer;
+    border-radius: 2px;
+}
+.upvote:hover {
+    opacity: 0.6;
+}
+.downvote:hover {
+    opacity: 0.6;
+}
+.votecount{
+    font-weight: bold;
+}

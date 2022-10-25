@@ -1,0 +1,51 @@
+<header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
+        <div class="flex-grow-1">
+            <a aria-label="Home" class="logo" routerLink="/">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     width="236.000000pt" height="236.000000pt" viewBox="0 0 236.000000 236.000000"
+                     preserveAspectRatio="xMidYMid meet" class="icon-svg">
+
+                    <g transform="translate(0.000000,236.000000) scale(0.100000,-0.100000)"
+                       stroke="none">
+                        <defs>
+                            <linearGradient id="gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:var(--accent);"/>
+                                <stop offset="100%" style="stop-color:var(--accentSecondary);"/>
+                            </linearGradient>
+                        </defs>
+
+                        <path fill="url(#gradient)" d="M0 1180 l0 -1180 1180 0 1180 0 0 1180 0 1180 -1180 0 -1180 0 0
+-1180z"/>
+                        <path fill="#1a1a1a" d="M0 1180 l0 -1180 1180 0 1180 0 0 1180 0 1180 -1180 0 -1180 0 0
+-1180z m1077 1149 c62 -23 123 -109 123 -174 0 -16 -18 -106 -39 -200 -22 -93
+-39 -171 -38 -171 7 -5 362 -82 365 -79 2 2 22 81 43 177 44 193 64 235 130
+269 47 24 132 28 170 9 47 -24 89 -74 104 -122 14 -50 9 -90 -50 -346 -9 -40
+-15 -75 -13 -76 1 -2 71 -18 153 -36 177 -39 221 -53 253 -83 55 -51 77 -145
+51 -214 -22 -60 -109 -122 -170 -123 -14 0 -104 18 -200 39 -96 22 -175 39
+-175 38 -5 -6 -82 -362 -79 -365 2 -2 81 -22 177 -43 193 -44 235 -64 269
+-130 24 -47 28 -132 9 -170 -24 -47 -74 -89 -122 -104 -50 -14 -90 -9 -346 50
+-40 9 -75 15 -76 13 -2 -1 -18 -70 -36 -153 -39 -177 -53 -221 -83 -253 -51
+-55 -145 -77 -214 -51 -62 23 -123 109 -123 174 0 17 18 106 39 200 22 93 39
+171 38 171 -7 5 -362 82 -365 79 -2 -2 -22 -81 -43 -177 -44 -193 -64 -235
+-130 -269 -47 -24 -132 -28 -170 -9 -47 24 -89 74 -104 122 -14 50 -9 90 50
+346 9 40 15 75 13 76 -1 2 -70 18 -153 36 -177 39 -221 53 -253 83 -55 51 -77
+145 -51 214 22 60 109 122 170 123 14 0 104 -18 200 -39 96 -22 175 -39 175
+-38 5 6 82 362 79 365 -2 2 -81 22 -177 43 -193 44 -235 64 -269 130 -24 47
+-28 132 -9 170 24 47 74 89 122 104 50 14 90 9 346 -50 40 -9 75 -15 76 -13 2
+1 15 59 30 128 53 244 70 281 151 323 35 19 111 22 152 6z"/>
+                        <path fill="#1a1a1a" d="M996 1220 c-22 -99 -38 -181 -35 -183 5 -5 341 -77 354 -77 10 0 93
+357 84 363 -5 5 -341 77 -354 77 -6 0 -28 -81 -49 -180z"/>
+                    </g>
+                </svg>
+                <span class="text">Sociorama</span>
+            </a>
+        </div>
+        <div class="flex-grow float-right buttons">
+            <a routerLink="/signup" *ngIf="!isLoggedIn" class="float-right signup mr-2">Sign Up</a>
+            <a routerLink="/login" *ngIf="!isLoggedIn" class="float-right login mr-2">Log In</a>
+            <a routerLink="/user/{{user}}" *ngIf="isLoggedIn" class="float-right profile mr-2">Profile</a>
+            <a routerLink="/logout" *ngIf="isLoggedIn" class="float-right logout mr-2">Log Out</a>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,57 @@
+.create-forum-container {
+  margin-top: 100px;
+  overflow: hidden;
+  background-color: var(--primary);
+  color: var(--textPrimary);
+  position: relative;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.create-forum-heading {
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 22px;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.forum-form {
+  padding: 16px;
+}
+
+.form-group {
+  margin-top: 8px;
+}
+
+.btnCreateForum, .btnDiscard {
+  width: 40%;
+  background-color: var(--textPrimary);
+  border-color: var(--textPrimary);
+  color: var(--primary);
+  border: 1px solid;
+  border-radius: 13px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 24px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  opacity: 1;
+  margin: 8px;
+}
+
+.btnDiscard{
+  background-color: var(--primary);
+  color: var(--textPrimary);
+}
+
+.btnCreateForum:hover, .btnDiscard:hover {
+  opacity: 0.6;
+}
+
+.btnCreateForum:disabled{
+  background-color: var(--disabled);
+}

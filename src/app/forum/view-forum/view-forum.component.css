@@ -1,0 +1,83 @@
+.header {
+    background-color: var(--secondary);
+    color: var(--textSecondary);
+}
+
+.contents{
+    margin: 80px 0px 8px 0px;
+}
+
+.created-by{
+    font-size: 14px;
+}
+
+.forum-title{
+    color: var(--textPrimary);
+    font-size: 44px;
+    font-weight: 450;
+}
+
+.forum-text{
+    color: var(--textPrimary);
+    font-size: 18px;
+}
+
+.btnEditForum,
+.btnDiscard {
+    width: 40%;
+    background-color: var(--textPrimary);
+    border-color: var(--textPrimary);
+    color: var(--primary);
+    border: 1px solid;
+    border-radius: 13px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    opacity: 1;
+    margin: 8px;
+}
+
+.btnDiscard {
+    background-color: var(--primary);
+    color: var(--textPrimary);
+}
+
+.btnEditForum:hover,
+.btnDiscard:hover {
+    opacity: 0.6;
+}
+
+.btnEditForum:disabled{
+    background-color: var(--disabled);
+}
+
+.footer{
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--textPrimary);
+    margin-right: 16px;
+}
+
+.btnFooter{
+    color: var(--textSecondary);
+    margin-right: 16px;
+    opacity: 1;
+}
+
+.btnFooter:hover{
+    opacity: 0.65;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none
+}
+
+.link{
+    color: var(--accent);
+}

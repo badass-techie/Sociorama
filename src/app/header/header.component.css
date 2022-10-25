@@ -1,0 +1,51 @@
+.navbar{
+    background-color: var(--primary);
+}
+
+.icon-svg{
+    height: 30px;
+    padding-left: 16px;
+    padding-right: 8px;
+    width: 54px;
+}
+
+.text{
+    color: var(--textPrimary);
+    font-size: 25px;
+    font-weight: 360;
+    height: 50px;
+    width: 50px;
+    vertical-align: middle;
+    line-height: 50px;
+}
+
+.logo{
+    text-decoration: none;
+}
+
+.login, .signup, .profile, .logout{
+    background-color: var(--primary);
+    border-color: var(--textPrimary);
+    color: var(--textPrimary);
+    border: 1px solid;
+    border-radius: 13px;
+    box-sizing: border-box;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    padding: 6px 24px;
+    margin-right: 12px;
+    opacity: 1;
+}
+
+.login, .logout{
+    background-color: var(--textPrimary);
+    color: var(--primary);
+}
+
+.signup:hover, .login:hover{
+    opacity: 0.6;
+}

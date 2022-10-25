@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+text-editut.ng-invalid.ng-touched {
+    border: 1px solid red;
+}
+
+/* Colors */
+:root{
+    --primary: #1a1a1a;
+    --secondary: #161616;
+    --accent: #3377ff;
+    --accentSecondary: #cc00ff;
+    --disabled: #777777;
+    --background: #030303;
+    --textPrimary: #fff;
+    --textSecondary: #878a8c;
+}
+/**********/
+
+body {
+    background-color: var(--background);
+}
+
+/* input with inline placeholder courtesy of https://stackoverflow.com/a/51169329/12633129 */
+.text-with-inline-placeholder {
+    position: relative;
+    display: inline-block;
+}
+
+.text-edit {
+    padding: 10px;
+}
+
+.text-hint {
+    color: #000;
+    padding: 10px;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 0.2s;
+    /*transition-timing-function: ease;*/
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
+    opacity: 0.5;
+}
+
+.text-edit:focus+.text-hint, .text-edit:not(:placeholder-shown)+.text-hint {
+    opacity: 1;
+    transform: scale(0.75) translateY(-50%) translateX(-16px);
+}
+
+/* End of placeholder */

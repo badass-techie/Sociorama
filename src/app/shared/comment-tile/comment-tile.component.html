@@ -1,0 +1,40 @@
+<div class="row comment" *ngFor="let comment of comments$">
+    <div class="col-md-12 comment-body">
+        <span class="header">
+            <span>Added by <a class="link" routerLink="/user/{{comment.userName}}">{{comment.userName}}</a></span>
+            <span> · {{comment.created}}</span>
+        </span>
+        <div>
+            <a href="post/{{comment.postId}}" class="comment-text">{{ comment.text }}</a>
+        </div>
+
+        <form [formGroup]="editCommentForm" *ngIf="showEditOverlay && comment.commentId == currentCommentIndex" (ngSubmit)="editComment(comment.commentId)">
+            <div>
+                <label class="text-with-inline-placeholder form-group col-12">
+                    <textarea type="text" placeholder=" " [formControlName]="'text'"
+                              class="form-control text-edit"></textarea>
+                    <span class="text-hint">Text</span>
+                </label>
+                <span *ngIf="!editCommentForm.get('text')?.valid && editCommentForm.get('text')?.touched" class="help-block">Text cannot be empty</span>
+            </div>
+
+            <span>
+                <div style="text-align: center" class="float-right">
+                    <button (click)="showOrHideEditOverlay(comment.commentId)" class="btnDiscard">Cancel</button>
+                    <button type="submit" class="btnEditComment" [disabled]="!editCommentForm.valid">Submit</button>
+                </div>
+            </span>
+        </form>
+
+        <span class="footer">
+            <a (click)="showOrHideEditOverlay(comment.commentId)" class="btnFooter" role="button" *ngIf="isOwner(comment)">
+                <fa-icon [icon]="editIcon"></fa-icon>
+                Edit
+            </a>
+            <a (click)="deleteComment(comment.commentId)" class="btnFooter" role="button" *ngIf="isOwner(comment)">
+                <fa-icon [icon]="deleteIcon"></fa-icon>
+                Delete
+            </a>
+        </span>
+    </div>
+</div>

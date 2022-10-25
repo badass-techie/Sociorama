@@ -1,0 +1,21 @@
+<div class="col-12 create-comment" *ngIf="isLoggedIn">
+    <div class="comment-body">
+        <form [formGroup]="addCommentForm" (ngSubmit)="addComment()">
+            <div>
+                <label class="text-with-inline-placeholder form-group col-12">
+                    <textarea type="text" placeholder=" " [formControlName]="'text'"
+                              class="form-control text-edit"></textarea>
+                    <span class="text-hint">Text</span>
+                </label>
+                <span *ngIf="!addCommentForm.get('text')?.valid && addCommentForm.get('text')?.touched" class="help-block">Text cannot be empty</span>
+            </div>
+
+            <span class="footer">
+                <button type="submit" class="btnFooter" [disabled]="!addCommentForm.valid">
+                    <fa-icon [icon]="editIcon"></fa-icon>
+                    Add Comment
+                </button>
+            </span>
+        </form>
+    </div>
+</div>

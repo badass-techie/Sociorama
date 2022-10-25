@@ -1,0 +1,57 @@
+<div>
+    <div class="row header">
+        <div class="col-1"></div>
+        <div class="col-10 contents">
+            <span class="created-by">
+                <span>Joined {{user.created}}</span>
+            </span>
+            <br/>
+            <span class="username">{{user.userName}}</span>
+            <br/>
+            <form [formGroup]="editUserForm" *ngIf="showEditOverlay" (ngSubmit)="changePassword(user.userName)">
+                <div>
+                    <label class="text-with-inline-placeholder form-group col-12">
+                    <input type="password" placeholder=" " [formControlName]="'password'"
+                              class="form-control text-edit">
+                        <span class="text-hint">Enter new password</span>
+                    </label>
+                    <span *ngIf="!editUserForm.get('password')?.valid && editUserForm.get('password')?.touched" class="help-block">Password cannot be empty</span>
+                </div>
+
+                <span>
+                    <div style="text-align: center" class="float-right">
+                        <button (click)="showOrHideEditOverlay()" class="btnDiscard">Cancel</button>
+                        <button type="submit" class="btnEditUser" [disabled]="!editUserForm.valid">Submit</button>
+                    </div>
+                </span>
+            </form>
+            <br/>
+            <span class="footer">
+                <span class="footer">{{user.numberOfPosts}} Posts</span>
+                <span class="footer">{{user.numberOfComments}} Comments</span>
+                <a (click)="showOrHideEditOverlay()" class="btnFooter" role="button" *ngIf="isOwner(user)">
+                    <fa-icon [icon]="editIcon"></fa-icon>
+                    Change Password
+                </a>
+                <a (click)="deleteUser(user.userName)" class="btnFooter" role="button" *ngIf="isOwner(user) && user.userName!='admin'">
+                    <fa-icon [icon]="deleteIcon"></fa-icon>
+                    Delete Account
+                </a>
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-0 col-md-1 col-lg-1"></div>
+        <div class="col-12 col-md-10 col-lg-10">
+<!--            <h2 style="color: #fff">Posts by {{username}}:</h2>-->
+            <app-post-tile [filter]="postFilter" [username]="userName"></app-post-tile>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-0 col-md-1 col-lg-1"></div>
+        <div class="col-12 col-md-10 col-lg-10">
+<!--            <h2 style="color: #fff">Comments by {{username}}:</h2>-->
+            <app-comment-tile [filter]="commentFilter" [username]="userName"></app-comment-tile>
+        </div>
+    </div>
+</div>

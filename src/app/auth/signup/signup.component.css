@@ -1,0 +1,51 @@
+.register-section{
+    margin-top: 100px;
+}
+
+.card{
+    background-color: var(--primary);
+    color: var(--textPrimary);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.sign-up {
+    width: 50%;
+    background-color: var(--textPrimary);
+    border-color: var(--textPrimary);
+    color: var(--primary);
+    border: 1px solid;
+    border-radius: 13px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 24px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    opacity: 1;
+    margin-bottom: 16px;
+}
+
+.sign-up:hover{
+    opacity: 0.6;
+}
+
+.sign-up:disabled{
+    background-color: var(--disabled);
+  }
+
+.form-group{
+    margin: 16px;
+}
+
+.login{
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login:hover{
+    opacity: 0.6;
+}

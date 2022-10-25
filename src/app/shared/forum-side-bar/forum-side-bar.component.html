@@ -1,0 +1,13 @@
+<div class="sidebar-view-forum">
+    <div class="title">Forums</div>
+    <br/>
+    <span *ngFor="let forum of forums;let indexOfElement=index;">
+        <span>
+            <a href="/forum/{{forum.forumName}}" class="forumName">{{indexOfElement+1}}) {{forum.forumName}}</a>
+        </span>
+        <hr />
+    </span>
+    <div class="btnViewAllWrapper" *ngIf="displayViewAll">
+        <button class="btnViewAll" routerLink="/forums">View All</button>
+    </div>
+</div>
