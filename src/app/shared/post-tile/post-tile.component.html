@@ -1,8 +1,8 @@
-<div class="row post" *ngFor="let post of posts$">
+<div class="row g-0 post" *ngFor="let post of posts$">
     <!-- Section to Display Votes-->
-    <app-vote-button [post]="post" class="col-1 vote-column"></app-vote-button>
+    <app-vote-button [post]="post" class="col-1 g-0 vote-column"></app-vote-button>
     <!-- Section to Display Post Information-->
-    <div class="col-11 post-body">
+    <div class="col-11 g-0 post-body">
         <span class="header">
             <span>Posted by <a class="link" routerLink="/user/{{post.userName}}">{{post.userName}}</a> · in </span>
             <span><a class="forum-text" routerLink="/forum/{{post.forumName}}">{{post.forumName}}</a></span>
@@ -21,7 +21,7 @@
 
         <form [formGroup]="editPostForm" *ngIf="showEditOverlay && post.postId == currentPostIndex" (ngSubmit)="editPost(post.postId)">
             <div>
-                <label class="text-with-inline-placeholder form-group col-12">
+                <label class="text-with-inline-placeholder form-group col-12 g-0">
                     <textarea type="text" placeholder=" " [formControlName]="'text'"
                               class="form-control text-edit"></textarea>
                     <span class="text-hint">Text</span>
@@ -53,3 +53,6 @@
         </span>
     </div>
 </div>
+<h3 class="empty" *ngIf="posts$.length == 0">
+    No posts yet.
+</h3>

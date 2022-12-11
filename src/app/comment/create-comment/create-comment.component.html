@@ -1,8 +1,8 @@
-<div class="col-12 create-comment" *ngIf="isLoggedIn">
+<div class="col-12 g-0 create-comment" *ngIf="isLoggedIn">
     <div class="comment-body">
         <form [formGroup]="addCommentForm" (ngSubmit)="addComment()">
             <div>
-                <label class="text-with-inline-placeholder form-group col-12">
+                <label class="text-with-inline-placeholder form-group col-12 g-0">
                     <textarea type="text" placeholder=" " [formControlName]="'text'"
                               class="form-control text-edit"></textarea>
                     <span class="text-hint">Text</span>

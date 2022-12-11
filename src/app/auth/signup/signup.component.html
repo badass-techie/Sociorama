@@ -1,7 +1,7 @@
 <div class="register-section">
-    <div class="row justify-content-center">
-        <div class="col-1 col-lg-4"></div>
-        <div class="col-10 col-lg-4">
+    <div class="row g-0 justify-content-center">
+        <div class="col-1 col-lg-4 g-0"></div>
+        <div class="col-10 col-lg-4 g-0">
             <div class="card">
                 <div class="card-header" style="text-align: center">
                     <h4>Sign up</h4>
@@ -10,7 +10,7 @@
                     <form [formGroup]="signupForm" (ngSubmit)="signup()">
                         <div class="form-group row">
                             <div>
-                                <label class="text-with-inline-placeholder col-12">
+                                <label class="text-with-inline-placeholder col-12 g-0">
                                     <input type="text" placeholder=" " [formControlName]="'email'"
                                            class="form-control text-edit">
                                     <span class="text-hint">Email</span>
@@ -22,7 +22,7 @@
 
                         <div class="form-group row">
                             <div>
-                                <label class="text-with-inline-placeholder col-12">
+                                <label class="text-with-inline-placeholder col-12 g-0">
                                     <input type="text" placeholder=" " [formControlName]="'username'"
                                            class="form-control text-edit">
                                     <span class="text-hint">Username</span>
@@ -34,7 +34,7 @@
 
                         <div class="form-group row">
                             <div>
-                                <label class="text-with-inline-placeholder col-12">
+                                <label class="text-with-inline-placeholder col-12 g-0">
                                     <input type="password" placeholder=" " [formControlName]="'password'"
                                            class="form-control text-edit" id="password"
                                            name="password">
@@ -54,6 +54,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-1 col-lg-4"></div>
+        <div class="col-1 col-lg-4 g-0"></div>
     </div>
 </div>

@@ -1,7 +1,7 @@
 <div>
-    <div class="row header">
-        <div class="col-1"></div>
-        <div class="col-10 contents">
+    <div class="row g-0 header">
+        <div class="col-1 g-0"></div>
+        <div class="col-10 g-0 contents">
             <span class="created-by">
                 <span>Joined {{user.created}}</span>
             </span>
@@ -10,7 +10,7 @@
             <br/>
             <form [formGroup]="editUserForm" *ngIf="showEditOverlay" (ngSubmit)="changePassword(user.userName)">
                 <div>
-                    <label class="text-with-inline-placeholder form-group col-12">
+                    <label class="text-with-inline-placeholder form-group col-12 g-0">
                     <input type="password" placeholder=" " [formControlName]="'password'"
                               class="form-control text-edit">
                         <span class="text-hint">Enter new password</span>
@@ -40,18 +40,20 @@
             </span>
         </div>
     </div>
-    <div class="row">
-        <div class="col-0 col-md-1 col-lg-1"></div>
-        <div class="col-12 col-md-10 col-lg-10">
-<!--            <h2 style="color: #fff">Posts by {{username}}:</h2>-->
-            <app-post-tile [filter]="postFilter" [username]="userName"></app-post-tile>
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-0 col-md-1 col-lg-1 g-0"></div>
+            <div class="col-12 col-md-10 col-lg-10 g-0">
+    <!--            <h2 style="color: #fff">Posts by {{username}}:</h2>-->
+                <app-post-tile [filter]="postFilter" [username]="userName"></app-post-tile>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-0 col-md-1 col-lg-1"></div>
-        <div class="col-12 col-md-10 col-lg-10">
-<!--            <h2 style="color: #fff">Comments by {{username}}:</h2>-->
-            <app-comment-tile [filter]="commentFilter" [username]="userName"></app-comment-tile>
+        <div class="row g-0">
+            <div class="col-0 col-md-1 col-lg-1 g-0"></div>
+            <div class="col-12 col-md-10 col-lg-10 g-0">
+    <!--            <h2 style="color: #fff">Comments by {{username}}:</h2>-->
+                <app-comment-tile [filter]="commentFilter" [username]="userName"></app-comment-tile>
+            </div>
         </div>
     </div>
 </div>

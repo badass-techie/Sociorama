@@ -1,7 +1,7 @@
 <div>
-    <div class="row header">
-        <div class="col-1"></div>
-        <div class="col-10 contents">
+    <div class="row g-0 header">
+        <div class="col-1 g-0"></div>
+        <div class="col-10 g-0 contents">
             <span class="created-by">
                 <span>Created by <a class="link" routerLink="/user/{{forum.userName}}">{{forum.userName}}</a> · {{forum.created}}</span>
             </span>
@@ -12,7 +12,7 @@
             <br/>
             <form [formGroup]="editForumForm" *ngIf="showEditOverlay" (ngSubmit)="updateForumDescription(forum.forumName)">
                 <div>
-                    <label class="text-with-inline-placeholder form-group col-12">
+                    <label class="text-with-inline-placeholder form-group col-12 g-0">
                         <textarea type="text" placeholder=" " [formControlName]="'text'"
                               class="form-control text-edit"></textarea>
                         <span class="text-hint">Text</span>
@@ -40,12 +40,14 @@
                 </a>
             </span>
         </div>
-        <div class="col-1"></div>
+        <div class="col-1 g-0"></div>
     </div>
-    <div class="row">
-        <div class="col-0 col-md-1 col-lg-1"></div>
-        <div class="col-12 col-md-10 col-lg-10">
-            <app-post-tile [filter]="postFilter" [forumName]="forum.forumName"></app-post-tile>
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-0 col-md-1 col-lg-1 g-0"></div>
+            <div class="col-12 col-md-10 col-lg-10 g-0">
+                <app-post-tile [filter]="postFilter" [forumName]="forum.forumName"></app-post-tile>
+            </div>
         </div>
     </div>
 </div>

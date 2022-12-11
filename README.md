@@ -26,6 +26,10 @@ The frontend is built with Angular and is fully responsive. Data is stored and r
 
 ![Homepage](screenshots/homepage.jpg)
 
+### Homepage (mobile)
+
+![Homepage (mobile)](screenshots/homepagemobile.gif)
+
 ### User Profile
 
 ![User Profile](screenshots/userprofile.jpg)
@@ -44,5 +48,5 @@ The frontend is built with Angular and is fully responsive. Data is stored and r
 
 ## Improving the User Experience
 
-- [ ] Lazy load content in feeds (posts, comments, etc) and only load more items when the user scrolls to the bottom of the page.
+- [ ] Lazy load content in feeds (posts, comments, etc.) and only load more items when the user scrolls to the bottom of the page.
 - [ ] Use a caching mechanism to improve loading speeds.
