@@ -25,9 +25,6 @@ The frontend is built with Angular and is fully responsive. Data is stored and r
 ### Homepage
 
 ![Homepage](screenshots/homepage.jpg)
-
-### Homepage (mobile)
-
 ![Homepage (mobile)](screenshots/homepagemobile.gif)
 
 ### User Profile
